@@ -5,13 +5,14 @@
       xmlns:vm="clr-namespace:ListViewTryout.ViewModels"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance vm:MusicGroupViewModel}"
       d:DesignHeight="500" d:DesignWidth="600"
 	>
-    <UserControl.Resources>
+    <!--<UserControl.Resources>
         <vm:MusicGroupViewModel x:Key="MusicGroupViewModel"/>
-    </UserControl.Resources>
+    </UserControl.Resources>-->
 
-    <Grid x:Name="MainGrid" d:DataContext="{StaticResource MusicGroupViewModel}">
+    <Grid x:Name="MainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>
             <ColumnDefinition Width="17*"/>
