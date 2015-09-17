@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System.Collections.ObjectModel;
 using MMVVM.ViewModelBase;
 
-namespace ListViewTryout.ViewModels
+using Groups.Model;
+
+namespace Groups.ViewModels
 {
     class MusicGroupViewModel : ViewModelBase
     {
@@ -31,22 +31,5 @@ namespace ListViewTryout.ViewModels
         public ObservableCollection<object> GroupList { get; private set; }
         public ObservableCollection<object> PossibleMembers { get; private set; }
         public ObservableCollection<object> ActiveMembers { get; set; } 
-    }
-
-    public class MusicGroup
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public Boolean IsActive { get; set; }
-    }
-
-    public class BandMember
-    {
-        public string Name { get; set; }
-
-        public BandMember(string name)
-        {
-            this.Name = name;
-        }
     }
 }

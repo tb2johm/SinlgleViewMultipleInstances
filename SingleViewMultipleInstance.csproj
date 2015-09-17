@@ -72,7 +72,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModels\UserGroupViewModel.cs" />
+    <Compile Include="Model\AnimalModel.cs" />
+    <Compile Include="Model\MusicModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\AnimalGroupViewModel.cs" />
     <Compile Include="ViewModels\MusicGroupViewModel.cs" />
     <Compile Include="Views\GenericGroupView.xaml.cs">
       <DependentUpon>GenericGroupView.xaml</DependentUpon>
@@ -122,9 +125,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>

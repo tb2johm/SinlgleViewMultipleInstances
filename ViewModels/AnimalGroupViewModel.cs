@@ -1,7 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using MMVVM.ViewModelBase;
 
-namespace ListViewTryout.ViewModels
+using Groups.Model;
+
+namespace Groups.ViewModels
 {
     class AnimalGroupViewModel : ViewModelBase
     {
@@ -27,21 +29,5 @@ namespace ListViewTryout.ViewModels
         public ObservableCollection<object> GroupList { get; private set; }
         public ObservableCollection<object> PossibleMembers { get; private set; }
         public ObservableCollection<object> ActiveMembers { get; set; }
-    }
-
-    public class AnimalGroup
-    {
-        public string Name { get; set; }
-        public string Comment { get; set; }
-    }
-
-    public class Animal
-    {
-        public string Name { get; set; }
-
-        public Animal(string name)
-        {
-            this.Name = name;
-        }
     }
 }

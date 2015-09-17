@@ -2,20 +2,24 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:views="clr-namespace:ListViewTryout.Views"
-        xmlns:vm="clr-namespace:ListViewTryout.ViewModels"
+        xmlns:vm="clr-namespace:Groups.ViewModels"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
-        <vm:MusicGroupViewModel x:Key="AccessGroupViewModel" />
-        <vm:AnimalGroupViewModel x:Key="AnimalGroupViewModel" />
+        <DataTemplate DataType="{x:Type vm:MusicGroupViewModel}">
+            <views:GenericGroupView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:AnimalGroupViewModel}">
+            <views:GenericGroupView />
+        </DataTemplate>
     </Window.Resources>
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    
     <Grid>
         <TabControl Background="LightGray">
-            <TabItem Header="Music Groups">
-                <views:GenericGroupView ViewModel="{StaticResource AccessGroupViewModel}"/>
-            </TabItem>
-            <TabItem Header="Animal Groups">
-                <views:GenericGroupView ViewModel="{StaticResource AnimalGroupViewModel}"/>
-            </TabItem>
+            <TabItem Header="Music Groups" Content="{Binding MusicGroupViewModel}" />
+            <TabItem Header="Animal Groups" Content="{Binding AnimalGroupViewModel}" />
         </TabControl>
     </Grid>
 </Window>
